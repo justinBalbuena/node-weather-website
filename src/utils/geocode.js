@@ -4,7 +4,6 @@ require('dotenv').config()
 const geocode_key = process.env.GEOCODE_ACCESS_TOKEN
 
 const geocode = (address, callback) => {
-  console.log(geocode_key)
   const url = 'https://api.mapbox.com/search/geocode/v6/forward?q=' + encodeURIComponent(address) + '&access_token=' + geocode_key + '&limit=1'
   request({ url: url, json: true}, (error, { body }) => {
     if (error) {
